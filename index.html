@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartLaunch Co-Founder｜AI起業アイデア診断</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__copy">
+        <span class="hero__tag">SmartLaunch Co-Founder</span>
+        <h1 class="hero__title">
+          あなたに最適な<br />
+          <span class="accent">AI起業アイデア診断</span>
+        </h1>
+        <p class="hero__subtitle">
+          Googleフォームの質問設計を会話体験に再構築しました。数分の対話で、あなたの強みと市場仮説にフィットするAI起業アイデアを描き出します。
+        </p>
+        <div class="hero__actions">
+          <button id="startOverTop" class="ghost-button">最初から診断し直す</button>
+          <div class="hero__meta">
+            <span>所要時間：3〜4分</span>
+            <span>質問数：9</span>
+            <span>何度でも診断可能</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="conversation">
+      <aside class="conversation__sidebar">
+        <div class="sidebar__card">
+          <h2>診断の流れ</h2>
+          <ol class="sidebar__steps" id="sidebarSteps"></ol>
+          <div class="sidebar__cta">
+            <p>
+              会話を完了すると、入力内容をまとめたサマリーと次のアクションの提案が得られます。チームメンバーとの共有もワンクリック。
+            </p>
+          </div>
+        </div>
+        <div class="sidebar__card sidebar__card--secondary">
+          <h3>会話ヒント</h3>
+          <ul>
+            <li>自由入力は箇条書きでもOK</li>
+            <li>やり直しはいつでも「戻る」で調整</li>
+            <li>最後に別の診断をすぐに開始できます</li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="conversation__main">
+        <div class="chat" id="chatWindow"></div>
+        <div class="progress">
+          <div class="progress__label">
+            <span id="progressLabel">1 / 9</span>
+            <button id="backButton" class="ghost-button ghost-button--small" type="button">
+              ← 戻る
+            </button>
+          </div>
+          <div class="progress__bar">
+            <div class="progress__fill" id="progressFill"></div>
+          </div>
+        </div>
+        <form id="inputForm" class="input" autocomplete="off">
+          <div id="inputContainer" class="input__container"></div>
+          <button id="submitButton" class="primary-button" type="submit">送信</button>
+        </form>
+      </section>
+    </main>
+
+    <template id="stepTemplate">
+      <li class="sidebar__step">
+        <span class="sidebar__step-index"></span>
+        <div class="sidebar__step-body">
+          <p class="sidebar__step-title"></p>
+          <p class="sidebar__step-hint"></p>
+        </div>
+      </li>
+    </template>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
